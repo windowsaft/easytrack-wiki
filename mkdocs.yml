@@ -1,0 +1,116 @@
+site_name: EasyTrack Wiki
+site_description: Manual and developer docs for EasyTrack — the local-first calorie and hydration tracker.
+site_url: https://easytrack.d-nn.is/docs/
+site_author: EasyTrack
+
+# The app lives in a separate repo; the header link points there.
+repo_url: https://github.com/windowsaft/easytrack
+repo_name: windowsaft/easytrack
+# Edits would land in the wrong repo (this is the wiki repo), so no edit button.
+edit_uri: ""
+
+copyright: "EasyTrack — GPL-3.0."
+
+theme:
+  name: material
+  language: en
+  logo: assets/easytrack-icon.png
+  favicon: assets/easytrack-icon.png
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: de
+          name: Deutsch
+          build: true
+          site_description: Handbuch und Entwicklerdokumentation für EasyTrack — den lokal-first Kalorien- und Wassertracker.
+          nav_translations:
+            Home: Start
+            User Guide: Nutzerhandbuch
+            Installation: Installation
+            Getting Started: Erste Schritte
+            Diary & Water: Tagebuch & Wasser
+            Search & Barcode: Suche & Barcode
+            Recipes: Rezepte
+            Goals & TDEE: Ziele & TDEE
+            History & Weight: Verlauf & Gewicht
+            Settings: Einstellungen
+            Backup: Datensicherung
+            Privacy: Datenschutz
+            Developers: Entwickler
+            Architecture: Architektur
+            Data model: Datenmodell
+            Food data & ETL: Lebensmitteldaten & ETL
+            Build & Release: Build & Release
+            Contributing: Mitwirken
+
+nav:
+  - Home: index.md
+  - User Guide:
+      - Installation: nutzer/installation.md
+      - Getting Started: nutzer/erste-schritte.md
+      - Diary & Water: nutzer/tagebuch.md
+      - Search & Barcode: nutzer/suche-barcode.md
+      - Recipes: nutzer/rezepte.md
+      - Goals & TDEE: nutzer/ziele.md
+      - History & Weight: nutzer/verlauf.md
+      - Settings: nutzer/einstellungen.md
+      - Backup: nutzer/datensicherung.md
+      - Privacy: nutzer/datenschutz.md
+  - Developers:
+      - Architecture: entwickler/architektur.md
+      - Data model: entwickler/datenmodell.md
+      - Food data & ETL: entwickler/food-daten.md
+      - Build & Release: entwickler/building.md
+      - Contributing: entwickler/beitragen.md

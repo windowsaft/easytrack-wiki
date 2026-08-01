@@ -1,0 +1,89 @@
+/* EasyTrack brand palette — deep green, lime, emerald.
+   Matches the app icon/splash and the landing page. */
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #0e3b23;
+  --md-primary-fg-color--light: #17b364;
+  --md-primary-fg-color--dark: #082518;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #e9f6ec;
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #17b364;
+}
+
+/* Link colours tuned per scheme for contrast. */
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #0f7a45;
+}
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: #6fd39a;
+  --md-default-bg-color: #0b1a12;
+}
+
+/* Lime accent bar under the header, echoing the calorie ring. */
+.md-header {
+  border-bottom: 2px solid #b6e84f;
+}
+
+/* Tighten the gap between the app-logo and the site title. */
+.md-header__button.md-logo {
+  padding-right: 0;
+  margin-right: 0;
+}
+.md-header__title {
+  margin-left: 0.2rem;
+}
+
+/* Phone screenshots on content pages — small, and floated aside on wide viewports
+   so they illustrate the text instead of dominating the page. */
+.screenshot {
+  display: block;
+  max-width: 190px;
+  width: 100%;
+  margin: 1rem auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 60em) {
+  .md-typeset figure:has(> .screenshot) {
+    float: right;
+    clear: right;
+    width: 190px;
+    margin: 0.2rem 0 1rem 1.75rem;
+  }
+}
+
+/* The home hero: three screenshots kept in a single row, scaling to fit. */
+.screens {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1.4rem 0;
+}
+.screens figure {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 230px;
+  margin: 0;
+  text-align: center;
+}
+.screens figure img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.38);
+}
+.screens figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Mermaid diagrams centered with a little breathing room. */
+.mermaid {
+  text-align: center;
+  margin: 1.2rem 0;
+}
